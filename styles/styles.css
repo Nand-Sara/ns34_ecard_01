@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita&family=Cookie&family=Handlee&display=swap');
+
+*,
+*:before,
+*:after{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #ffc;
+}
+
+.card{
+	height: 540px;
+	width: 840px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transform: translateX(-30%);
+	cursor: pointer;
+	transition: 2s;
+	-webkit-perspective: 2000px;
+	perspective: 2000;
+}
+
+.card:hover{
+    transform: rotate(-5deg);
+}
+
+.card:hover .outside{
+    transform: rotateY(-150deg);
+}
+
+.outside{
+	height: 100%;
+	width: 50%;
+	left: 50.1%;
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	transition: 2s;
+	transform-origin: left;
+}
+
+.front, .back{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: rotateX(0deg);
+}
+
+.front{
+	background-color: #f39;
+	z-index: 1;
+}
+
+.back{
+    background: linear-gradient(to right, #f39 0%, #f06 100%);
+    transform: rotateY(180deg);
+	font-family: 'Handlee', cursive;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 110px;
+    padding: 90px 10px;
+}
+
+.inside{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    background: linear-gradient(to left, #f39 0%, #f06 100%);
+    font-family: 'Cookie', cursive;
+    color: #fff;
+    font-size: 90px;
+    text-align: center;
+    line-height: 110px;
+    padding: 90px 10px;
+    box-shadow: 25px 25px 35px rgba(0,0,0,0.3);
+}
+
+.inside>p{
+    border-bottom: 10px dotted white;
+}
+
+.box-border{
+	height: 100%;
+	width: 100%;
+	border: 10px solid #6cf;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Amita', cursive;
+	font-size: 60px;
+	color: #fff;
+	text-align: center;
+}
