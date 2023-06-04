@@ -1,0 +1,222 @@
+html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #3cf 0%, #fc6 100%);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.bottle{
+    height: 25em;
+    width: 7em;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-top: none;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.5);
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 2em 2em 1em 1em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.bottle:before{
+    position: absolute;
+    content: "";
+    height: 3em;
+    width: 4em;
+    left: 50%;
+    top: calc(50% - 14em);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: none;
+    box-shadow: 2px 0 2px 0 rgba(0,0,0,0.5);
+}
+
+.bottle:after{
+  display: block;
+  content: "";
+  position: absolute;
+  height: 15em;
+  width: 1.5em;
+  left: calc(50% - 2em);
+  top: calc(50% - 2em);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1.5em;
+}
+
+.message{
+  display: block;
+  position: absolute;
+  height: 8em;
+  width: 2em;
+  background: #fc6;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  left: calc(50% - 1em);
+  top: 50%;
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  border-radius: 2em 2em / 1em 1em; /*Cylinder*/
+  cursor: pointer;
+  color: #fc6;
+}
+
+.message:after{
+  display: block;
+  content: "Happy Birthday!!!";
+  overflow: hidden;
+  text-align: center;
+  font-size: 3.5em;
+}
+
+.message-top{
+  animation-name: msg-top;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  -webkit-animation-name: msg-top;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-name: msg-top;
+  -moz-animation-duration: 2s;
+  -o-animation-name: msg-top;
+  -o-animation-duration: 2s;
+  -o-animation-fill-mode: both;
+}
+
+.bottle-down{
+  animation-name: bot-dwn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  -webkit-animation-name: bot-dwn;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-name: bot-dwn;
+  -moz-animation-duration: 2s;
+  -o-animation-name: bot-dwn;
+  -o-animation-duration: 2s;
+  -o-animation-fill-mode: both;
+}
+
+.message-open{
+  animation-name: msg-open;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  -webkit-animation-name: msg-open;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-name: msg-open;
+  -moz-animation-duration: 2s;
+  -o-animation-name: msg-open;
+  -o-animation-duration: 2s;
+  -o-animation-fill-mode: both;
+}
+
+@keyframes msg-top{
+  100%{
+    top: 5%;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@keyframes bot-dwn{
+  100%{
+    top: 65%;
+  }
+}
+
+@keyframes msg-open{
+  100%{
+    left: 50%;
+    width: 25em;
+    border-radius: 0;
+    color: #222;
+    background: linear-gradient(to bottom, #ffc 0%, #fc6 100%);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+}
+
+.overlay{
+	position: fixed;
+	display: none;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.overlay #text{
+	overflow: hidden;
+	line-height: 2em;
+	height: 2em;
+}
+
+#text{
+	list-style: none;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	font-size: 2em;
+	color: #fff;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	z-index: 200;
+	line-height: 2em;
+}
+
+.fade{
+	animation-name: fade;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+
+@keyframes fade{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes typing{
+	40%, 60%{
+		left: calc(100% + 30px);
+	}
+	100%{
+		left: 0;
+	}
+}
