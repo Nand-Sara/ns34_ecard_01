@@ -62,7 +62,7 @@ body{
 }
 
 .back{
-    background-image: url('C:/Users/A/Documents/Front end development/HTML programs/Greeting Card/images/Florals/flower_8.jpg');
+    background-image: url('https://nand-sara.github.io/ns34_ecard_01/images/Florals/flower_8.jpg');
 	background-size: 100% 100%;
     transform: rotateX(180deg);
 	padding: 90px 10px;
